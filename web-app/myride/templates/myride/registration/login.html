@@ -1,0 +1,12 @@
+<!-- templates/registration/login.html -->
+
+{% block title %}Login{% endblock %}
+
+{% block content %}
+<h1>Log In</h1>
+  {% csrf_token %}
+    <input type ="text" name="user" placeholder="User Name">
+    <input type ="password" name="pwd" placeholder="Password">
+    <input type="submit" value="Submit"> {{ err_msg }}
+</form>
+{% endblock %}

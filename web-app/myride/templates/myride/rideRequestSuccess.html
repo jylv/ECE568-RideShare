@@ -1,0 +1,7 @@
+{% extends 'base.html' %}
+
+{% block title %}Success{% endblock %}
+{% block content %}
+  <h2>Ride request submitted! A driver will be matched soon. Please go back to Home</h2> <!---dashboard换成owner界面-->
+    <h3><a href="{% url 'departList' %}">Home</a></h3>
+{% endblock %}

@@ -1,0 +1,21 @@
+ECE568 project 1 ride sharing - danger log
+
+1. Username duplication during new user sign up: the solution of reducing such duplication 
+was that we explictly specified the clean() method within our sign up model form in views.py 
+and thus enabling our website to check if current username has been taken. If it is taken, a 
+forms.ValidationError will be displayed to let the user aware of this issue so that they can 
+change another username, and the process continues.
+
+2. Changing in username is hard to handle once users have created their accounts, thus while 
+users can change other personal info such as displayed name, email address, password, etc., 
+the change of username is not allowed.
+
+3. When creating accounts/registering vehicle/requesting rides, or doing editing, it is possible 
+that users do not enter some required information. This is handled in the database (when writing 
+models.py) by setting these fields to non-nullable, and calling is_valid() in model form, to 
+ensure these information has been written.
+
+4. A user cannot be a driver and accept ride requests unless the user entered vehicle information. 
+Thus, we added a check everytime the user performed a role select of being a driver, if there is no 
+vehicle info associated with the user, we will redirect the user to vehicle registration page.
+

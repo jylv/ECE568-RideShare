@@ -1,0 +1,6 @@
+{% extends 'base.html' %}
+{% block title %}Success{% endblock %}
+{% block content %}
+  <h2>Registration success. Please login.</h2> <!---dashboard换成owner界面-->
+    <h3><a href="{% url 'login' %}">Log in</a></h3>
+{% endblock %}
